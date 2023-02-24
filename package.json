@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/test-utils": "^3.2.2",
+    "@nuxt/test-utils-edge": "^3.2.3-rc.0-27949872.7479d46",
+    "@prettier/plugin-pug": "^2.4.1",
+    "@tsconfig/strictest": "^1.0.2",
+    "@volar/vue-language-plugin-pug": "^1.1.7",
+    "nuxt": "^3.2.2",
+    "prettier": "^2.8.4",
+    "pug": "^3.0.2",
+    "sass": "^1.58.3",
+    "vitest": "^0.28.5"
+  }
+}
