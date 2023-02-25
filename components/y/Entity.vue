@@ -1,4 +1,3 @@
 <template lang="pug">
-div
-  NuxtPage
+| YEntity
 </template>
