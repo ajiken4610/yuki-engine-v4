@@ -1,5 +1,5 @@
 <template lang="pug">
-| YRenderer
+| YScene
 div
   YObject3D(:object="scene" v-bind="props")
     slot
