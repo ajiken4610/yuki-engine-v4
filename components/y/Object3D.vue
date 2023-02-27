@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
   rotation?: Vec3,
   scale?: Vec3,
   rotationOrder?: RotationOrder,
-  p?: string,
+  p?: string | undefined,
   object: Object3D
 }>(), {
   position: () => ({ x: 0, y: 0, z: 0 }),
