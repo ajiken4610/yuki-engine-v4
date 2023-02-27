@@ -2,7 +2,7 @@
 | YObject3D
 div
   YEntity
-  slot
+  slot(:p="tp")
 </template>
 
 <script setup lang="ts">
@@ -13,7 +13,8 @@ const props = withDefaults(defineProps<{
   rotation?: Vec3,
   scale?: Vec3,
   rotationOrder?: RotationOrder,
-  object: Object3D
+  object: Object3D,
+  p?: string
 }>(), {
   position: () => ({ x: 0, y: 0, z: 0 }),
   rotation: () => ({ x: 0, y: 0, z: 0 }),
@@ -33,21 +34,14 @@ watch(() => props.rotationOrder, (order) => {
   props.object.rotation.order = order;
 }, { immediate: true })
 
-let i = 0;
-while (inject("object3D" + i, null)) i++;
-watch(() => props.object, (object) => {
-  provide("object3D" + i, object)
-}, { immediate: true })
-let parent = inject<Object3D | null>("object3D" + (i - 1), null)
-watch(() => props.object, (object, oldObject) => {
-  if (parent) {
-    oldObject && parent.remove(oldObject)
-    parent.add(object)
-  }
-}, { immediate: true })
+const tp = genRandomString()
+provide(tp, props.object)
+let parent: Object3D;
+if (props.p) {
+  parent = inject(props.p)!
+  parent.add(props.object)
+}
 onUnmounted(() => {
-  if (parent) {
-    parent.remove(props.object)
-  }
+  parent?.remove(props.object)
 })
 </script>
