@@ -1,6 +1,6 @@
 <template lang="pug">
-YScene(@value="scene=$event")
-  YCameraPerspective(@value="camera=$event")
+YScene(@value="scene=$event" v-slot="{p}")
+  YCameraPerspective(@value="camera=$event" :p="p")
 </template>
 
 <script setup lang="ts">
