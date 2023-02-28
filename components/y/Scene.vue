@@ -1,8 +1,8 @@
 <template lang="pug">
 | YScene
 div
-  YObject3D(:object="scene" v-bind="props")
-    slot
+  YObject3D(:object="scene" v-bind="props" v-slot="{p:pt}")
+    slot(:p="pt")
 </template>
 <script setup lang="ts">
 import { Scene } from 'three';
