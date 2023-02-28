@@ -1,5 +1,5 @@
 <template lang="pug">
-| YObject3D
+| YCamera
 div
   YObject3D(v-bind="props" v-slot="{p:pt}")
     slot(:p="pt")
